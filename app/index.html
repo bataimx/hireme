@@ -13,6 +13,57 @@
 
   <link rel="icon" href="/favicon.ico" />
   <title>React.js Boilerplate</title>
+  <script id="threeloader" defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
+  <style>
+    body {
+      background-color: #f0f0f0 !important;
+    }
+    .typed-cursor {
+      font-weight: normal;
+      -webkit-animation: blink .7s infinite;
+      -moz-animation: blink .7s infinite;
+      animation: blink .7s infinite;
+      opacity: 1;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @-webkit-keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @-moz-keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .time-line-title {
+      background: #dbefff;
+      font-size: 58px;
+      font-weight: bold;
+      word-break: break-all;
+      line-height: 0.8;
+      padding: 0 0 40px;
+      color: #ffffff;
+      text-align: right;
+    }
+
+    .time-line-row {
+      margin: 0;
+    }
+
+    .time-line-data {
+      margin-top: .5rem;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,6 +77,8 @@
 
   <!-- Open Sans Font -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
   <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically injects all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this file. Don't add any assets here! (Check out webpack.dev.babel.js and webpack.prod.babel.js if you want to know more) -->
 </body>
