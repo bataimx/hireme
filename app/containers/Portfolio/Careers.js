@@ -59,7 +59,7 @@ class Careers extends React.Component {
   render() {
     const items = data.map((currentValue, idx) => {
       if( idx % 2 == 0 ) {
-        return <dl className="row time-line-row align-items-stretch">
+        return <dl key={idx} className="row time-line-row align-items-stretch">
           <div className="col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-right text-sm-right">
             <WowBlock slide="up">{currentValue.yrs}</WowBlock>
           </div>
@@ -77,7 +77,7 @@ class Careers extends React.Component {
         </dl>;
       }
 
-      return <dl className="row time-line-row align-items-stretch">
+      return <dl key={idx} className="row time-line-row align-items-stretch">
         <div className="col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-left text-sm-right">
           <WowBlock slide="up">{currentValue.yrs}</WowBlock>
         </div>

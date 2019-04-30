@@ -12,6 +12,7 @@ const styles = {
   fontWeight: 'bold',
   fontSize: '40px',
   color: '#252525',
+  maxWidth: 'calc(100% - 4rem)',
   textShadow: '0px 5px 6px #a7a7a7'
 }
 
@@ -81,7 +82,7 @@ class TextBlock extends React.Component {
   render() {
     const msg = this.state.isRemove ? this.state.preText : this.props.text;
     const txt = [...msg].filter( (letter, idx) => idx <= (this.state.idx - 1) );
-    return <div style={styles} >{txt}<span className="typed-cursor" >|</span></div>;
+    return <div style={styles} className="head-text" >{txt}<span className="typed-cursor" >|</span></div>;
   }
 }
 

@@ -18,7 +18,7 @@ import H3 from 'components/H3';
 import Img from 'components/Img';
 import Thumb1 from './Thumbs/thumb1.jpg';
 
-const appHeight = 6000;
+const appHeight = 7000;
 const AppWrapper = styled.div`
   margin: 0 auto;
   display: inline-block;
@@ -87,7 +87,7 @@ class App extends React.Component {
       case (percent < 100):
         message = '#givemechallenge';
         break;
-      case (percent < 106):
+      case (percent < 105):
         message = ' ';
         break;
       default:
