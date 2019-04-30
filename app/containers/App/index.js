@@ -31,23 +31,24 @@ const AppWrapper = styled.div`
 
 export default function App() {
   return (
-    <Switch>
-      <Route exact path="/" component={Portfolio} />
-      <AppWrapper>
-        <Helmet
-          titleTemplate="%s - React.js Boilerplate"
-          defaultTitle="React.js Boilerplate"
-        >
-          <meta name="description" content="A React.js Boilerplate application" />
-        </Helmet>
-        <Header />
-        <Route exact path="/home" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
+    <Portfolio/>
+    // <Switch>
+    //   <Route exact path="/" component={Portfolio} />
+    //   <AppWrapper>
+    //     <Helmet
+    //       titleTemplate="%s - React.js Boilerplate"
+    //       defaultTitle="React.js Boilerplate"
+    //     >
+    //       <meta name="description" content="A React.js Boilerplate application" />
+    //     </Helmet>
+    //     <Header />
+    //     <Route exact path="/home" component={HomePage} />
+    //     <Route path="/features" component={FeaturePage} />
+    //     <Route path="" component={NotFoundPage} />
         
-        <Footer />
-        <GlobalStyle />
-      </AppWrapper>
-    </Switch>
+    //     <Footer />
+    //     <GlobalStyle />
+    //   </AppWrapper>
+    // </Switch>
   );
 }

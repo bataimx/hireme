@@ -18,7 +18,7 @@ import H3 from 'components/H3';
 import Img from 'components/Img';
 import Thumb1 from './Thumbs/thumb1.jpg';
 
-const appHeight = 4000;
+const appHeight = 6000;
 const AppWrapper = styled.div`
   margin: 0 auto;
   display: inline-block;
@@ -132,7 +132,7 @@ class App extends React.Component {
 
       <div className="container-fluid" style={{background: '#fff', padding: '4rem'}}>
         <div className="row">
-          <div className="col-sm col-lg-4 offset-lg-1">
+          <div className="col-sm col-lg-4 offset-lg-1 mb-4 mb-lg-0">
             <WowBlock slide="right">
               <Img className="img-fluid" src={Thumb1} alt="thumb1" />
             </WowBlock>
@@ -167,39 +167,39 @@ class App extends React.Component {
 
       <div className="container-fluid py-5" style={{background: '#dbefff'}}>
         <div className="row align-items-center">
-          <div className="col-sm-4 text-sm-right">
+          <div className="col-lg-4 mb-4 mb-lg-0 text-lg-right">
             <WowBlock slide="up">
               <H1>Find Me at</H1>
             </WowBlock>
           </div>
-          <div className="col-sm-6 offset-sm-2">
+          <div className="col-lg-6 offset-lg-2">
             <WowBlock slide="up">
-              <ul className="list-inline row mb-0">
-                <li className="list-inline-item col-sm" >
+              <ul className="list-unstyled row mb-0">
+                <li className="col-sm col-4" >
                   <A target="_blank" href="https://codepen.io/bataimx/">
                     <i className="fab fa-3x fa-codepen"></i>
                     <p>Codepen</p>
                   </A>
                 </li>
-                <li className="list-inline-item col-sm" >
+                <li className="col-sm col-4" >
                   <A target="_blank" href="skype:bataimx@hotmail.com">
                     <i className="fab fa-3x fa-skype"></i>
                     <p>Skype</p>
                   </A>
                 </li>
-                <li className="list-inline-item col-sm" >
+                <li className="col-sm col-4" >
                   <A target="_blank" href="https://www.linkedin.com/in/bataimx/">
                     <i className="fab fa-3x fa-linkedin"></i>
                     <p>Linkedin</p>
                   </A>
                 </li>
-                <li className="list-inline-item col-sm" >
+                <li className="col-sm col-4" >
                   <A target="_blank" href="https://github.com/bataimx/">
                     <i className="fab fa-3x fa-github"></i>
                     <p>Github</p>
                   </A>
                 </li>
-                <li className="list-inline-item col-sm" >
+                <li className="col-sm col-4" >
                   <A target="_blank" href="https://www.hackerrank.com/bataimx/">
                     <i className="fab fa-3x fa-hackerrank"></i>
                     <p>Hackerrank</p>
