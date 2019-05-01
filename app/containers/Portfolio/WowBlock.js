@@ -4,31 +4,30 @@ class WowBlock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      complete: false,
-      show: false
-    }
+      show: false,
+    };
     this.scrollEvent = this.scrollEvent.bind(this);
   }
 
   componentDidMount() {
-    if( !this.isScrolledIntoView(this.refs.scoreRef) ) {
-      window.addEventListener("scroll", this.scrollEvent );
+    if (!this.isScrolledIntoView(this.refs.scoreRef)) {
+      window.addEventListener('scroll', this.scrollEvent);
     } else {
-      this.setState( () => ({ show: true }));
+      this.setState(() => ({ show: true }));
     }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollEvent );
+    window.removeEventListener('scroll', this.scrollEvent);
   }
 
   scrollEvent() {
-    if(this.state.show) return;
-    if(!this.isScrolledIntoView) return;
+    if (this.state.show) return;
+    if (!this.isScrolledIntoView) return;
 
-    if( this.isScrolledIntoView(this.refs.scoreRef) ) {
-      this.setState( () => ({ show: true }));
-      window.removeEventListener("scroll", this.scrollEvent );
+    if (this.isScrolledIntoView(this.refs.scoreRef)) {
+      this.setState(() => ({ show: true }));
+      window.removeEventListener('scroll', this.scrollEvent);
     }
   }
 
@@ -38,46 +37,49 @@ class WowBlock extends React.Component {
     const elemBottom = rect.bottom;
 
     // Only completely visible elements return true:
-    const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    const isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
     // Partially visible elements return true:
-    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    // isVisible = elemTop < window.innerHeight && elemBottom >= 0;
     return isVisible;
   }
 
   render() {
-    let wrapper = {
+    const slideDistance = 20;
+    const wrapper = {
       display: 'inline-block',
       width: '100%',
-      transition: 'all 1s ease-in-out',
+      transition: 'all .6s ease-in-out',
       opacity: 0,
-      transform: 'translateX(100px)'
-    }
-    const wowType = this.props.slide || 'none'
+      transform: `translateX(${slideDistance}px)`,
+    };
+    const wowType = this.props.slide || 'none';
     switch (true) {
-      case (wowType == 'up'):
-        wrapper.transform = 'translateY(100px)';
+      case wowType == 'up':
+        wrapper.transform = `translateY(${slideDistance}px)`;
         break;
-      case (wowType == 'left'):
-        wrapper.transform = 'translateX(100px)';
+      case wowType == 'left':
+        wrapper.transform = `translateX(${slideDistance}px)`;
         break;
-      case (wowType == 'down'):
-        wrapper.transform = 'translateY(-100px)';
+      case wowType == 'down':
+        wrapper.transform = `translateY(-${slideDistance}px)`;
         break;
-      case (wowType == 'right'):
-        wrapper.transform = 'translateX(-100px)';
+      case wowType == 'right':
+        wrapper.transform = `translateX(-${slideDistance}px)`;
         break;
       default:
         wrapper.transform = '';
         break;
     }
 
-    if(this.state.show) {
+    if (this.state.show) {
       wrapper.transform = 'translateX(0)';
       wrapper.opacity = '1';
     }
-    return <div style={wrapper} ref="scoreRef" >
-      {this.props.children}
-    </div>;
+    return (
+      <div style={wrapper} ref="scoreRef">
+        {this.props.children}
+      </div>
+    );
   }
 }
 

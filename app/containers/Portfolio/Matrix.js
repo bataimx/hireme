@@ -199,28 +199,40 @@ class Matrix extends React.Component {
         object.position.copy( object.spherePosition )
       }
       this.group.isShown = true;
-    } else if(this.timeline < 3 && this.group.isShown) {
-      for ( let i = 0, len = this.group.children.length; i < len; i ++ ) {
-        let object = this.group.children[i];
-        object.isInPosition = false;
-        object.position.set(0, 0, 0);
-      }
-      this.group.isShown = false;
     }
     
     // scalar points to origin position
-    if( this.timeline > 10) {
+    if( this.timeline > 10 && !this.group.isScalar) {
+      let itemScalared = [];
+
       for ( let i = 0, len = this.group.children.length; i < len; i ++ ) {
         let object = this.group.children[i];
         scope.scalarDownObjectTo(object, object.matrixPosition, 10);
+
+        if( object.isInPosition ) itemScalared.push('0')
       }
-    } else {
-      this.group.rotation.y += 0.003;
-      this.group.rotation.z += 0.003;
+
+      if( itemScalared.length == this.group.children.length) {
+        this.group.isScalar = true;
+      }
+    } else if( this.timeline <= 10 && this.group.isScalar) {
+      let itemUnScalared = [];
+
       for ( let i = 0, len = this.group.children.length; i < len; i ++ ) {
         let object = this.group.children[i];
         scope.scalarObjectTo(object, object.spherePosition, 8);
+
+        if( !object.isInPosition ) itemUnScalared.push('0')
       }
+
+      if( itemUnScalared.length == this.group.children.length) {
+        this.group.isScalar = false;
+      }
+    }
+
+    if ( this.timeline <= 10 ) {
+      this.group.rotation.y += 0.003;
+      this.group.rotation.z += 0.003;
     }
     
     // Rotation group object
