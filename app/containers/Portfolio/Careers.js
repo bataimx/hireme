@@ -60,16 +60,16 @@ class Careers extends React.Component {
     const items = data.map((currentValue, idx) => {
       if( idx % 2 == 0 ) {
         return <dl key={idx} className="row time-line-row align-items-stretch">
-          <div className="col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-right text-sm-right">
+          <div className="col-4 col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-right text-sm-right pt-2">
             <WowBlock slide="up">{currentValue.yrs}</WowBlock>
           </div>
-          <div className="col-sm-9 col-lg-5 time-line-data order-lg-3">
+          <div className="col-8 col-sm-9 col-lg-5 time-line-data pb-lg-5 order-lg-3">
             <WowBlock slide="left">
               <b>{currentValue.name}</b>
               {currentValue.intro}
             </WowBlock>
           </div>
-          <div className="col-sm-6 offset-sm-3 offset-lg-0 col-lg-5 order-lg-1 time-line-image pb-5">
+          <div className="col-sm-6 offset-sm-3 offset-lg-0 col-lg-5 order-lg-1 time-line-image pb-5 text-lg-right">
             <WowBlock slide="right">
               <Img className="img-fluid" src={currentValue.src} alt={currentValue.name} />
             </WowBlock>
@@ -78,10 +78,10 @@ class Careers extends React.Component {
       }
 
       return <dl key={idx} className="row time-line-row align-items-stretch">
-        <div className="col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-left text-sm-right">
+        <div className="col-4 col-sm-3 col-lg-2 time-line-title order-lg-2 text-lg-left text-sm-right pt-2">
           <WowBlock slide="up">{currentValue.yrs}</WowBlock>
         </div>
-        <div className="col-sm-9 col-lg-5 time-line-data text-lg-right">
+        <div className="col-8 col-sm-9 col-lg-5 time-line-data pb-lg-5 text-lg-right">
           <WowBlock slide="right">
             <b>{currentValue.name}</b>
             {currentValue.intro}

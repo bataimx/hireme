@@ -45,6 +45,7 @@ class App extends React.Component {
     if( window.THREE ) {
       this.setState( state => ({ threeloader: true }))
     }
+
     document.getElementById('threeloader').addEventListener('load', function() {
       scope.setState( state => ({ threeloader: true }))
     });
@@ -106,7 +107,7 @@ class App extends React.Component {
         { this.state.threeloader && this.state.percent <= 100 ? <Matrix getScrollPercent={this.getScrollPercent} ref={ this.RefMatrix } /> : <b>Loading</b> }
       </AppWrapper>
 
-      <div className="container-fluid" style={{background: '#dbefff', padding: '10rem 4rem'}}>
+      <div className="container-fluid" style={{background: '#dbefff', padding: '10rem 15px'}}>
         <div className="row justify-content-center">
           <div className="col-sm-10 col-lg-6 text-sm-center">
             <WowBlock slide="down">
@@ -130,7 +131,7 @@ class App extends React.Component {
         </div>
       </div>
 
-      <div className="container-fluid" style={{background: '#fff', padding: '4rem'}}>
+      <div className="container-fluid" style={{background: '#fff', padding: '4rem 15px'}}>
         <div className="row">
           <div className="col-sm col-lg-4 offset-lg-1 mb-4 mb-lg-0">
             <WowBlock slide="right">
@@ -174,7 +175,7 @@ class App extends React.Component {
           </div>
           <div className="col-lg-6 offset-lg-2">
             <WowBlock slide="up">
-              <ul className="list-unstyled row mb-0">
+              <ul className="list-unstyled row text-sm-left text-center">
                 <li className="col-sm col-4" >
                   <A target="_blank" href="https://codepen.io/bataimx/">
                     <i className="fab fa-3x fa-codepen"></i>
