@@ -59,7 +59,7 @@ class App extends React.Component {
   update() {
     const scope = this;
     this.componentsToUpdate.map(component => {
-      // if (!component.current) return;
+      if (!component.current) return;
       component.current.update();
     });
     this.setState(state => ({
@@ -133,10 +133,8 @@ class App extends React.Component {
               </WowBlock>
               <WowBlock slide="left">
                 <p>
-                  I'm a web developer with{' '}
-                  {Math.abs(2015 - new Date().getFullYear())} year exp working
-                  as Frontender, now i'm quite open for any offers. my self, I
-                  fairly well-versed in build up responsive website that
+                  I'm a web developer with {Math.abs(2015 - new Date().getFullYear())} year exp working
+                  as Frontender, now i'm quite open for any offers. my self, I fairly well-versed in build up responsive website that
                   friendly and stand out.
                 </p>
               </WowBlock>
