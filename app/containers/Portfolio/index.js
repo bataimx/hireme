@@ -133,8 +133,10 @@ class App extends React.Component {
               </WowBlock>
               <WowBlock slide="left">
                 <p>
-                  I'm a web developer with {Math.abs(2015 - new Date().getFullYear())} year exp working
-                  as Frontender, now i'm quite open for any offers. my self, I fairly well-versed in build up responsive website that
+                  I'm a web developer with{' '}
+                  {Math.abs(2015 - new Date().getFullYear())} year exp working
+                  as Frontender, now i'm quite open for any offers. my self, I
+                  fairly well-versed in build up responsive website that
                   friendly and stand out.
                 </p>
               </WowBlock>
@@ -142,8 +144,12 @@ class App extends React.Component {
                 <H3>
                   <A
                     target="_blank"
-                    href="https://drive.google.com/open?id=0BylCAo5UYnpVWnVwaFFLSE5wOUU"
+                    href="https://docs.google.com/document/d/1S0NFPk17fkvjXB8dWmKIfqjJptz9YTi_evylyIq0Hxg"
                   >
+                    <i
+                      style={{ marginRight: '0.3em' }}
+                      className="fas fa-file-word"
+                    />
                     Hire Me!
                   </A>
                 </H3>
@@ -166,11 +172,11 @@ class App extends React.Component {
               <WowBlock slide="right">
                 <H3>My SKills & Knowledge</H3>
               </WowBlock>
-              <ScoreBlock percent={0.9}>HTML</ScoreBlock>
+              {/* <ScoreBlock percent={0.9}>HTML</ScoreBlock>
               <ScoreBlock percent={0.9}>CSS</ScoreBlock>
               <ScoreBlock percent={0.8}>Javascript</ScoreBlock>
               <ScoreBlock percent={0.8}>Responsive Web</ScoreBlock>
-              <ScoreBlock percent={0.7}>Git & SVN</ScoreBlock>
+              <ScoreBlock percent={0.7}>Git & SVN</ScoreBlock> */}
               <WowBlock slide="up">
                 <ul className="list-inline my-4" style={{ color: '#72a6d0' }}>
                   <li className="list-inline-item pr-3">
@@ -205,6 +211,12 @@ class App extends React.Component {
                   </li>
                   <li className="list-inline-item pr-3">
                     <i className="fab fa-3x fa-wordpress" />
+                  </li>
+                  <li className="list-inline-item pr-3">
+                    <i className="fab fa-3x fa-angular" />
+                  </li>
+                  <li className="list-inline-item pr-3">
+                    <i className="fab fa-3x fa-node" />
                   </li>
                 </ul>
               </WowBlock>
